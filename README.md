@@ -1,6 +1,6 @@
 # 🌐 Arjun Kumar — Developer Portfolio
 
-> Live at: **[https://arjunxploit.netlify.app/](https://arjunkr149.github.io](https://arjunxploit.netlify.app/))**
+> Live at: **[https://arjunxploit.netlify.app/](https://arjunxploit.netlify.app/)**
 
 Personal portfolio website built with modern web technologies featuring a glassmorphism dark theme, smooth animations, and a hidden terminal easter egg.
 
