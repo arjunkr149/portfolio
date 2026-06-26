@@ -7,7 +7,7 @@
   <title>Arjun Kumar | Developer Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <style>
     /* ===== TOKENS ===== */
     :root {
@@ -375,6 +375,16 @@
       display: flex; align-items: center; justify-content: center;
       font-size: 5rem; color: var(--cyan);
       position: relative; z-index: 1;
+      overflow: hidden;
+    }
+    .hero-img-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 50%;
+      position: absolute;
+      inset: 0;
     }
     .stats-row {
       display: flex;
@@ -813,7 +823,7 @@
       </div>
       <div class="theme-thumb"></div>
     </button>
-    <a href="ArjunResume_new.pdf" class="btn-primary" download>
+    <a href="ArjunResume.pdf" class="btn-primary" download>
       <i class="fa fa-download" style="margin-right:6px"></i> Resume
     </a>
     <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -828,7 +838,7 @@
   <a href="#skills" class="mobile-nav-link">Skills</a>
   <a href="#projects" class="mobile-nav-link">Projects</a>
   <a href="#contact" class="mobile-nav-link">Contact</a>
-  <a href="ArjunResume_new.pdf" class="btn-primary" download>Download Resume</a>
+  <a href="ArjunResume.pdf" class="btn-primary" download>Download Resume</a>
 </div>
 
 <!-- HERO -->
@@ -1011,7 +1021,8 @@
           <div class="project-header">
             <div class="project-icon" style="background:rgba(236,72,153,0.1);color:var(--pink)">🚦</div>
             <div class="project-links">
-              <a href="https://github.com/prajju149" class="project-link-btn" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+              <a href="https://github.com/arjunkr149/ClearLaneAI" class="project-link-btn" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+              <a href="https://clearlaneai-1.onrender.com/" class="project-link-btn" target="_blank" title="Live Demo"><i class="fa fa-external-link-alt"></i></a>
             </div>
           </div>
           <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;">
@@ -1096,7 +1107,8 @@
         <div class="project-header">
           <div class="project-icon" style="background:rgba(124,58,237,0.1);color:#A78BFA">🔗</div>
           <div class="project-links">
-            <a href="https://github.com/prajju149" class="project-link-btn" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://github.com/arjunkr149/certifychain" class="project-link-btn" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://certifychain.onrender.com/" class="project-link-btn" target="_blank" title="Live Demo"><i class="fa fa-external-link-alt"></i></a>
           </div>
         </div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;">
@@ -1122,7 +1134,8 @@
         <div class="project-header">
           <div class="project-icon" style="background:rgba(239,68,68,0.1);color:#F87171">🛡️</div>
           <div class="project-links">
-            <a href="https://github.com/prajju149" class="project-link-btn" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://github.com/arjunkr149/network-analyzer" class="project-link-btn" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://claude.ai/public/artifacts/f6439abb-0869-4cd0-b3e3-61ad3c3ea03d" class="project-link-btn" target="_blank" title="Live Demo"><i class="fa fa-external-link-alt"></i></a>
           </div>
         </div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;">
@@ -1538,28 +1551,30 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
 <script>
 /* ====== TERMINAL DATA ====== */
 const PROJECTS = [
-  { id:'1', name:'ClearLane AI',     tech:'Flask · YOLOv8 · EasyOCR · OpenCV',         type:'🏆 Hackathon', url:'https://github.com/prajju149' },
-  { id:'2', name:'CertifyChain',     tech:'HTML/JS · Node.js · Blockchain · Claude API', type:'🎓 Academic',  url:'https://github.com/prajju149' },
-  { id:'3', name:'BiblioAI (LMS)',   tech:'Vanilla JS · CSS3 · localStorage',           type:'🎓 Academic',  url:'https://github.com/arjunkr149/The-Smart-Library-AI' },
-  { id:'4', name:'NETWATCH',         tech:'Wireshark · HTML/CSS · JS',                  type:'💻 Personal',  url:'https://github.com/prajju149' },
-  { id:'5', name:'E-Commerce Site',  tech:'HTML · CSS · JS · Java · SQL',               type:'🎓 Academic',  url:'https://github.com/prajju149/E-Commerce-Website' },
-  { id:'6', name:'Currency Converter',tech:'Python · Tkinter · REST API',               type:'💻 Personal',  url:'https://github.com/prajju149' },
-  { id:'7', name:'Debt Statistics',  tech:'Python · Pandas · Matplotlib · Power BI',    type:'🎓 Academic',  url:'https://github.com/prajju149/International-Debt-Statistics' },
+  { id:'1', name:'ClearLane AI',            tech:'Flask · YOLOv8 · EasyOCR · OpenCV · Render.com',  type:'🏆 Hackathon', url:'https://github.com/prajju149' },
+  { id:'2', name:'BiblioAI — Smart LMS',    tech:'Vanilla JS · CSS3 · AI Filtering · localStorage', type:'🎓 Academic',  url:'https://github.com/arjunkr149/The-Smart-Library-AI', demo:'https://libraiq.netlify.app/' },
+  { id:'3', name:'Blockchain Entry System', tech:'Python · Flask · SHA256 · QR Code · HMAC',        type:'🎓 Academic',  url:'https://github.com/arjunkr149/blockchain_entry_system' },
+  { id:'4', name:'CertifyChain',            tech:'HTML/JS · Node.js · Blockchain · Claude API',     type:'🎓 Academic',  url:'https://github.com/prajju149' },
+  { id:'5', name:'NETWATCH',                tech:'React · Wireshark · MITRE ATT&CK · Network',      type:'🛡️ Security',  url:'https://github.com/prajju149' },
+  { id:'6', name:'E-Commerce Website',      tech:'HTML · CSS · JS · Java · SQL · Node.js',          type:'🎓 Academic',  url:'https://github.com/prajju149/E-Commerce-Website' },
+  { id:'7', name:'Currency Converter',      tech:'Python · Tkinter · REST API · requests',          type:'💻 Personal',  url:'' },
+  { id:'8', name:'Debt Statistics',         tech:'Python · Pandas · Matplotlib · Power BI · Jupyter', type:'💻 Personal', url:'https://github.com/prajju149/International-Debt-Statistics' },
 ];
 
 const SKILLS = {
-  frontend:  ['HTML5','CSS3','JavaScript','React (basics)','Responsive Design'],
-  backend:   ['Python','Flask','Node.js','REST APIs','MySQL'],
-  aiml:      ['YOLOv8','EasyOCR','OpenCV','Pandas','Matplotlib'],
-  security:  ['Kali Linux','Wireshark','Nmap','Network Analysis (learning)'],
-  tools:     ['Git & GitHub','VS Code','Linux CLI','Render.com','Power BI'],
-  languages: ['Python','Java','C/C++','JavaScript','SQL'],
+  frontend:  ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap 5', 'React (basics)', 'AOS Animations', 'Glassmorphism'],
+  backend:   ['Python', 'Flask', 'Node.js', 'REST APIs', 'MySQL', 'JSON Storage'],
+  aiml:      ['YOLOv8', 'EasyOCR', 'OpenCV', 'Pandas', 'Matplotlib', 'Collaborative Filtering'],
+  security:  ['Kali Linux', 'Wireshark', 'Nmap', 'Network Analysis', 'NETWATCH Dashboard', 'MITRE ATT&CK'],
+  tools:     ['Git & GitHub', 'VS Code', 'Linux CLI', 'Render.com', 'Netlify', 'Power BI'],
+  languages: ['Python', 'Java', 'C/C++', 'JavaScript', 'SQL'],
 };
 
 const SOCIAL = {
   github:   'https://github.com/arjunkr149',
   linkedin: 'https://www.linkedin.com/in/arjun-kumar59264/',
   youtube:  'https://youtube.com/@CodeWithArjunKr',
+  twitter:  'https://x.com/arjun36017',
   email:    'mailto:aksir648@gmail.com',
 };
 
@@ -1605,7 +1620,7 @@ function bootSequence() {
     ['<span class="t-cyan t-bold">╚══════════════════════════════════════════════╝</span>', 160],
     ['', 260],
     ['<span class="t-green">✓</span> <span class="t-muted">System initialized...</span>', 320],
-    ['<span class="t-green">✓</span> <span class="t-muted">Loading projects database... 7 found</span>', 480],
+    ['<span class="t-green">✓</span> <span class="t-muted">Projects database loaded — 8 found</span>', 480],
     ['<span class="t-green">✓</span> <span class="t-muted">Connecting to GitHub...</span>', 640],
     ['<span class="t-green">✓</span> <span class="t-muted">B.Tech CSE @ GNIOT, Greater Noida — Online</span>', 800],
     ['', 920],
@@ -1626,13 +1641,13 @@ const CMDS = {
     print('<span class="t-muted">─────────────────────────────────────────────</span>');
     const cmds = [
       ['whoami',        'About Arjun Kumar'],
-      ['projects',      'List all projects'],
+      ['projects',      'List all 8 projects'],
       ['project &lt;id&gt;', 'Show project details (e.g. project 1)'],
       ['skills',        'View tech skills'],
       ['skills &lt;cat&gt;', 'Filter by category (frontend/backend/aiml/security/tools)'],
       ['contact',       'Get in touch'],
       ['social',        'Social media links'],
-      ['open &lt;site&gt;',  'Open link (github/linkedin/youtube)'],
+      ['open &lt;site&gt;',  'Open link (github/linkedin/youtube/twitter/email)'],
       ['resume',        'Download resume'],
       ['youtube',       'CodeWithArjunKr channel info'],
       ['security',      'Cybersecurity learning path'],
@@ -1653,18 +1668,20 @@ const CMDS = {
     print('<span class="t-cyan">│</span> <span class="t-white t-bold">B.Tech Computer Science</span>');
     print('<span class="t-cyan">│</span> <span class="t-muted">GNIOT, Greater Noida, Uttar Pradesh</span>');
     print('<span class="t-cyan">│</span>');
-    print('<span class="t-cyan">│</span> <span class="t-yellow">🌐 Web Developer</span>  <span class="t-pink">🤖 AI/ML Enthusiast</span>');
-    print('<span class="t-cyan">│</span> <span class="t-purple">🔐 Cybersecurity Learner</span>  <span class="t-green">📹 Content Creator</span>');
+    print('<span class="t-cyan">│</span> <span class="t-yellow">🌐 Web Dev</span>  <span class="t-pink">🤖 AI/ML</span>  <span class="t-purple">🔐 CyberSec</span>');
+    print('<span class="t-cyan">│</span> <span class="t-green">📹 CodeWithArjunKr</span>  <span class="t-purple">⛓ Blockchain</span>');
     print('<span class="t-cyan">│</span>');
-    print('<span class="t-cyan">│</span> <span class="t-muted">YouTube:</span> <span class="t-white">CodeWithArjunKr</span>  <span class="t-muted">(Hinglish CS tutorials)</span>');
-    print('<span class="t-cyan">│</span> <span class="t-muted">Status:</span>  <span class="t-green t-bold">● Open to internships</span>');
+    print('<span class="t-cyan">│</span> <span class="t-muted">YouTube :</span> <span class="t-white">@CodeWithArjunKr</span>');
+    print('<span class="t-cyan">│</span> <span class="t-muted">Twitter :</span> <span class="t-white">@arjun36017</span>');
+    print('<span class="t-cyan">│</span> <span class="t-muted">Projects:</span> <span class="t-white">8 built & deployed</span>');
+    print('<span class="t-cyan">│</span> <span class="t-muted">Status  :</span>  <span class="t-green t-bold">● Open to internships</span>');
     print('<span class="t-cyan">└────────────────────────────────────────────┘</span>');
     gap();
   },
 
   projects() {
     gap();
-    print('<span class="t-cyan t-bold">Projects — Type "project &lt;id&gt;" for details</span>');
+    print('<span class="t-cyan t-bold">All 8 Projects — Type "project &lt;id&gt;" for details</span>');
     print('<span class="t-muted">─────────────────────────────────────────────</span>');
     PROJECTS.forEach(p => {
       print(` <span class="t-yellow">[${p.id}]</span> <span class="t-white t-bold">${p.name}</span> <span class="t-muted">${p.type}</span>`);
@@ -1682,7 +1699,9 @@ const CMDS = {
     print(`<span class="t-cyan t-bold">── ${p.name} ──</span>`);
     print(`<span class="t-muted">Type   :</span> <span class="t-white">${p.type}</span>`);
     print(`<span class="t-muted">Stack  :</span> <span class="t-yellow">${p.tech}</span>`);
-    print(`<span class="t-muted">GitHub :</span> <a class="t-link" href="${p.url}" target="_blank">${p.url}</a>`);
+    if (p.url) print(`<span class="t-muted">GitHub :</span> <a class="t-link" href="${p.url}" target="_blank">${p.url}</a>`);
+    if (p.demo) print(`<span class="t-muted">Demo   :</span> <a class="t-link" href="${p.demo}" target="_blank">${p.demo}</a>`);
+    if (!p.url && !p.demo) print(`<span class="t-muted">Link   :</span> <span class="t-yellow">Private / Coming soon</span>`);
     gap();
   },
 
@@ -1713,6 +1732,7 @@ const CMDS = {
     print(`<span class="t-muted">📞 Phone   :</span> <span class="t-white">+91-6386416463</span>`);
     print(`<span class="t-muted">💼 LinkedIn:</span> <a class="t-link" href="${SOCIAL.linkedin}" target="_blank">arjun-kumar59264</a>`);
     print(`<span class="t-muted">🐙 GitHub  :</span> <a class="t-link" href="${SOCIAL.github}" target="_blank">arjunkr149</a>`);
+    print(`<span class="t-muted">🐦 Twitter :</span> <a class="t-link" href="${SOCIAL.twitter}" target="_blank">x.com/arjun36017</a>`);
     gap();
     print('<span class="t-green">→ Type "open linkedin" or "open github" to visit directly.</span>');
     gap();
@@ -1729,9 +1749,9 @@ const CMDS = {
 
   open(args) {
     const site = args[0]?.toLowerCase();
-    const map = { github: SOCIAL.github, linkedin: SOCIAL.linkedin, youtube: SOCIAL.youtube, email: SOCIAL.email };
+    const map = { github: SOCIAL.github, linkedin: SOCIAL.linkedin, youtube: SOCIAL.youtube, twitter: SOCIAL.twitter, email: SOCIAL.email };
     if (!site || !map[site]) {
-      print(`<span class="t-err">Usage: open &lt;github|linkedin|youtube|email&gt;</span>`); return;
+      print(`<span class="t-err">Usage: open &lt;github|linkedin|youtube|twitter|email&gt;</span>`); return;
     }
     window.open(map[site], '_blank');
     print(`<span class="t-green">✓ Opening ${site}...</span>`);
