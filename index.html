@@ -1162,7 +1162,8 @@
         <div class="project-header">
           <div class="project-icon" style="background:rgba(251,191,36,0.1);color:#FBBF24">🛒</div>
           <div class="project-links">
-            <a href="https://github.com/prajju149/E-Commerce-Website" class="project-link-btn" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://github.com/arjunkr149/E-Commerce-Website" class="project-link-btn" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://thecuratedcart.netlify.app/" class="project-link-btn" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
             <a href="https://drive.google.com/file/d/1yCp8H91lzxVT40RDawl953VJtx6Gq0rI/view" class="project-link-btn" target="_blank" title="Demo"><i class="fa fa-play"></i></a>
           </div>
         </div>
@@ -1262,21 +1263,30 @@
         </div>
       </div>
       <div class="contact-form-card reveal reveal-delay-2">
-        <form action="https://formspree.io/f/mrewzkbn"
-  method="POST">
+        <form id="contact-form" action="https://formspree.io/f/mrewzkbn" method="POST" novalidate>
           <div class="form-group">
             <label>name</label>
-            <input type="text" id="f-name" placeholder="Your name" required>
+            <input type="text" id="f-name" name="name" placeholder="Your name" required>
           </div>
           <div class="form-group">
             <label>email</label>
-            <input type="email" id="f-email" placeholder="your@email.com" required>
+            <input type="email" id="f-email" name="email" placeholder="your@email.com" required>
+          </div>
+          <div class="form-group">
+            <label>subject</label>
+            <input type="text" id="f-subject" name="subject" placeholder="Internship / Collaboration / General">
           </div>
           <div class="form-group">
             <label>message</label>
-            <textarea id="f-message" placeholder="What's on your mind?" required></textarea>
+            <textarea id="f-message" name="message" placeholder="What's on your mind?" required></textarea>
           </div>
-          <button type="submit" class="form-submit">
+          <input type="hidden" name="_subject" value="New Portfolio Message 🚀 — Arjun Kumar">
+          <div id="form-success" style="display:none;text-align:center;padding:20px 0">
+            <i class="fa fa-check-circle" style="font-size:2.5rem;color:#10B981;display:block;margin-bottom:12px"></i>
+            <h4 style="font-weight:700;margin-bottom:8px">Message Sent! 🎉</h4>
+            <p style="color:var(--muted)">Thanks for reaching out — I'll get back to you soon.</p>
+          </div>
+          <button type="submit" class="form-submit" id="form-btn">
             Send Message <i class="fa fa-paper-plane" style="margin-left:8px"></i>
           </button>
         </form>
@@ -1285,6 +1295,7 @@
   </div>
 </section>
 
+<!-- FOOTER -->
 <!-- FOOTER -->
 <footer>
   <div> <a href="#hero" class="footer-brand">&lt;Arjun Kumar /&gt;</a></div>
@@ -1299,6 +1310,7 @@
 
 <button id="back-top" title="Back to top"><i class="fa fa-chevron-up"></i></button>
 <div class="toast" id="toast">✅ Message sent! I'll get back to you soon.</div>
+
 
 <script>
 // Theme Toggle
@@ -1370,12 +1382,31 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
 });
 
 // Contact form
-document.getElementById('contact-form').addEventListener('submit', function(e) {
+// Contact form — Formspree AJAX
+document.getElementById('contact-form').addEventListener('submit', async function(e) {
   e.preventDefault();
-  const toast = document.getElementById('toast');
-  toast.classList.add('show');
-  setTimeout(() => toast.classList.remove('show'), 3500);
-  this.reset();
+  const btn = document.getElementById('form-btn');
+  btn.innerHTML = 'Sending… <i class="fa fa-spinner fa-spin" style="margin-left:8px"></i>';
+  btn.disabled = true;
+  try {
+    const res = await fetch(this.action, {
+      method: 'POST',
+      body: new FormData(this),
+      headers: { Accept: 'application/json' }
+    });
+    if (res.ok) {
+      this.reset();
+      btn.style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    } else {
+      btn.innerHTML = 'Try Again <i class="fa fa-paper-plane" style="margin-left:8px"></i>';
+      btn.disabled = false;
+      alert('Something went wrong. Please email me directly at aksir648@gmail.com');
+    }
+  } catch (err) {
+    btn.innerHTML = 'Try Again <i class="fa fa-paper-plane" style="margin-left:8px"></i>';
+    btn.disabled = false;
+  }
 });
 </script>
 
